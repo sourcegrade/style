@@ -6,6 +6,7 @@ import org.gradle.api.plugins.quality.CheckstyleExtension
 import org.gradle.api.plugins.quality.CheckstylePlugin
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
+import org.jlleitschuh.gradle.ktlint.KtlintExtension
 import org.jlleitschuh.gradle.ktlint.KtlintPlugin
 
 class StylePlugin : Plugin<Project> {
@@ -18,6 +19,9 @@ class StylePlugin : Plugin<Project> {
             config = target.resources.text.fromString(checkStyleConfiguration.use { it.reader().readText() })
         }
         target.apply<KtlintPlugin>()
+        target.configure<KtlintExtension> {
+            enableExperimentalRules.set(true)
+        }
     }
 
     companion object {
