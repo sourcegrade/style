@@ -41,3 +41,17 @@ gradlePlugin {
         }
     }
 }
+
+pluginBundle {
+    website = "https://www.sourcegrade.org"
+    vcsUrl = "https://github.com/SourceGrade/Style"
+    (plugins) {
+        "style" {
+            tags = listOf("style", "linter", "sourcegrade")
+        }
+    }
+    mavenCoordinates {
+        groupId = project.group.toString()
+        artifactId = "style"
+    }
+}
