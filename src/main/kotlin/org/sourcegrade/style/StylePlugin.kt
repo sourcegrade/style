@@ -18,6 +18,7 @@ class StylePlugin : Plugin<Project> {
         target.configure<CheckstyleExtension> {
             config = target.resources.text.fromString(checkStyleConfiguration.use { it.reader().readText() })
             maxWarnings = 0
+            toolVersion = "9.2.1"
         }
         target.apply<KtlintPlugin>()
         target.configure<KtlintExtension> {
