@@ -12,7 +12,7 @@ version = "1.1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
-    maven("https://plugins.gradle.org/m2/")
+    gradlePluginPortal()
 }
 
 dependencies {
