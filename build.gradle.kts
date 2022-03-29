@@ -15,9 +15,11 @@ repositories {
     gradlePluginPortal()
 }
 
+val ktlintVersion: String by project
+
 dependencies {
     implementation(gradleKotlinDsl())
-    implementation("org.jlleitschuh.gradle:ktlint-gradle:10.2.1")
+    implementation("org.jlleitschuh.gradle:ktlint-gradle:$ktlintVersion")
 }
 
 tasks {
