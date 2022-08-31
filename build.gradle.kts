@@ -1,10 +1,11 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+@Suppress("DSL_SCOPE_VIOLATION") // https://youtrack.jetbrains.com/issue/KTIJ-19369
 plugins {
     `java-gradle-plugin`
-    kotlin("jvm")
-    id("com.gradle.plugin-publish")
-    id("org.jlleitschuh.gradle.ktlint")
+    alias(libs.plugins.gradle.publish)
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.ktlint)
 }
 
 group = "org.sourcegrade"
@@ -15,11 +16,13 @@ repositories {
     gradlePluginPortal()
 }
 
-val ktlintVersion: String by project
-
 dependencies {
     implementation(gradleKotlinDsl())
-    implementation("org.jlleitschuh.gradle:ktlint-gradle:$ktlintVersion")
+    implementation(
+        "org.jlleitschuh.gradle:ktlint-gradle:" +
+            // sigh, it doesn't seem like there is a better way to depend on ktlint-gradle in the compile-classpath
+            libs.plugins.ktlint.get().toString().substringAfter(':')
+    )
 }
 
 tasks {
