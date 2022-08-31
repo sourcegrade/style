@@ -11,11 +11,6 @@ plugins {
 group = "org.sourcegrade"
 version = file("version").readLines().first()
 
-repositories {
-    mavenCentral()
-    gradlePluginPortal()
-}
-
 dependencies {
     implementation(gradleKotlinDsl())
     implementation(
