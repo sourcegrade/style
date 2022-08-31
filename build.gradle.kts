@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "org.sourcegrade"
-version = "2.1.0-SNAPSHOT"
+version = file("version").readLines().first()
 
 repositories {
     mavenCentral()
