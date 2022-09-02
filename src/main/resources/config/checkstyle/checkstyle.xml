@@ -336,6 +336,7 @@
             <property name="tokens"
                       value="INTERFACE_DEF, ENUM_DEF, ANNOTATION_DEF"/>
             <property name="excludeScope" value="nothing"/>
+            <property name="skipAnnotations" value="ApiStatus.Internal"/>
         </module>
         <module name="MethodName">
             <property name="format" value="^[a-z][a-z0-9][a-zA-Z0-9_]*$"/>
