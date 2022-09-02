@@ -44,6 +44,6 @@ gradlePlugin {
 
 pluginBundle {
     website = "https://www.sourcegrade.org"
-    vcsUrl = "https://github.com/sourceGrade/style"
+    vcsUrl = "https://github.com/sourcegrade/style"
     tags = listOf("style", "linter", "sourcegrade")
 }
