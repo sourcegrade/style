@@ -33,17 +33,14 @@ tasks {
 
 gradlePlugin {
     plugins {
-        create("style") {
+        register("style") {
             id = "org.sourcegrade.style"
             displayName = "Jagr Style"
             description = "Gradle plugin for consistent code style in SourceGrade repositories"
             implementationClass = "org.sourcegrade.style.StylePlugin"
+            tags.set(listOf("style", "linter", "sourcegrade"))
         }
     }
-}
-
-pluginBundle {
-    website = "https://www.sourcegrade.org"
-    vcsUrl = "https://github.com/sourcegrade/style"
-    tags = listOf("style", "linter", "sourcegrade")
+    website.set("https://www.sourcegrade.org")
+    vcsUrl.set("https://github.com/sourcegrade/style")
 }
