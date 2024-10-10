@@ -1,4 +1,4 @@
 [plugins]
 gradle-publish = "com.gradle.plugin-publish:1.1.0"
-kotlin-jvm = "org.jetbrains.kotlin.jvm:1.8.10"
+kotlin-jvm = "org.jetbrains.kotlin.jvm:2.0.21"
 ktlint = "org.jlleitschuh.gradle.ktlint:11.3.1"
